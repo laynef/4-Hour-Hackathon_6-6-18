@@ -14,7 +14,7 @@ module.exports = {
             order_id: 1,
           },
       ]
-        return queryInterface.bulkInsert('Orders', product.map(e => ({
+        return queryInterface.bulkInsert('Products', product.map(e => ({
             ...e,
             created_at: new Date(),
             updated_at: new Date(),
@@ -22,6 +22,6 @@ module.exports = {
     },
   
     down: (queryInterface, Sequelize) => {
-        return queryInterface.bulkDelete('Orders', null, {});
+        return queryInterface.bulkDelete('Products', null, {});
     }
   };
