@@ -6,16 +6,18 @@ const fs = require('fs')
 const router = Router;
 
 const index = fs.readdirSync(__dirname)
-    .map(e => e.replace(RegExp('.js', 'ig')))
+    .map(e => e.replace(RegExp('.js', 'ig'), ''))
     .reduce((acc, item) => {
         acc[item] = require(`${__dirname}/${item}`);
         return acc;
     }, {});
 
 each(index, (routesArray, routeType) => {
-    routesArray.forEach((route) => {
-        router[routeType](route.route, ...route.middleware, route.controller)
-    })
+    if (routesArray.length > 0) {
+        routesArray.forEach((route) => {
+            router[routeType](route.route, ...route.middleware, route.controller)
+        })
+    }
 })
 
 module.exports = router

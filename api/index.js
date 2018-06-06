@@ -11,6 +11,10 @@ const app = express();
 app.use(cors())
 app.use(helmet())
 
+app.get('/', (req, res) => {
+    res.status(200).send('OK')
+})
+
 each(apiVersions, (value, key) => {
     app.use(`/api/${key}`, value)
 })
