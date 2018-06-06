@@ -8,9 +8,7 @@ module.exports = (req, res) => {
         returning: true
     })
     .then((response) => {
-        res.status(203).send({
-            deleted: true,
-        })
+        res.status(202).send(handleResponse(response))
     })
     .catch((error) => {
         res.status(400).send({

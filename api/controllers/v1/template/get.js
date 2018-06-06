@@ -1,5 +1,5 @@
 const { MODEL } = require('../../../models');
-const { getIncludes } = require('../../../utils');
+const { getIncludes, handleResponse } = require('../../../utils');
 
 
 module.exports = (req, res) => {
@@ -9,7 +9,8 @@ module.exports = (req, res) => {
     }))
     .then((response) => {
         res.status(200).send({
-            archived: true,
+            count: response.count,
+            data: handleResponse(response.rows),
         })
     })
     .catch((error) => {
