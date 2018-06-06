@@ -4,7 +4,7 @@ const { getIncludes, handleResponse } = require('../../../utils');
 
 module.exports = (req, res) => {
 
-    Product.findAllAndCount(getIncludes({ 
+    Product.findAllAndCount(getIncludes(req, { 
         where: req.params || {}
     }))
     .then((response) => {

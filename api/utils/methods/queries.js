@@ -1,13 +1,22 @@
 const { capitalize } = require('lodash');
-const { plural } = require('pluralize')
+const { singular } = require('pluralize')
+const models = require('../../models')
 
 module.exports = {
     
-    getIncludes: (req, others={}) => ({
-        ...others,
-        include: req.query && req.query.include ? req.query.include.split(',').map(e => ({
-            model: capitalize(plural(e))
-        })) : []
-    })
+    getIncludes: (req, others={}) => {
+
+        return {
+            ...others,
+            include: req.query && req.query.include ? req.query.include
+                .split(',')
+                .filter(e => !!models[capitalize(singular(e))])
+                .map(e => {
+                    return {
+                        model: models[capitalize(singular(e))]
+                    }
+                }) : []
+        }
+    }
 
 };

@@ -4,7 +4,7 @@ const { getIncludes, handleResponse } = require('../../../utils');
 
 module.exports = (req, res) => {
 
-    Tracking.findOne(getIncludes({ 
+    Tracking.findOne(getIncludes(req, { 
         where: req.params || {}
     }))
     .then((response) => {

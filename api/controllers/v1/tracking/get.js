@@ -4,7 +4,7 @@ const { getIncludes, handleResponse } = require('../../../utils');
 
 module.exports = (req, res) => {
 
-    Tracking.findAllAndCount(getIncludes({ 
+    Tracking.findAllAndCount(getIncludes(req, { 
         where: req.params || {}
     }))
     .then((response) => {

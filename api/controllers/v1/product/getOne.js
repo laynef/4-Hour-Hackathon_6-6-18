@@ -4,7 +4,7 @@ const { getIncludes, handleResponse } = require('../../../utils');
 
 module.exports = (req, res) => {
 
-    Product.findOne(getIncludes({ 
+    Product.findOne(getIncludes(req, { 
         where: req.params || {}
     }))
     .then((response) => {

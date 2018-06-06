@@ -4,7 +4,7 @@ const { getIncludes, handleResponse } = require('../../../utils');
 
 module.exports = (req, res) => {
 
-    User.findAllAndCount(getIncludes({ 
+    User.findAllAndCount(getIncludes(req, { 
         where: req.params || {}
     }))
     .then((response) => {

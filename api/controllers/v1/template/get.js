@@ -4,7 +4,7 @@ const { getIncludes, handleResponse } = require('../../../utils');
 
 module.exports = (req, res) => {
 
-    MODEL.findAllAndCount(getIncludes({ 
+    MODEL.findAllAndCount(getIncludes(req, { 
         where: req.params || {}
     }))
     .then((response) => {

@@ -4,7 +4,7 @@ const { getIncludes, handleResponse } = require('../../../utils');
 
 module.exports = (req, res) => {
 
-    Review.findOne(getIncludes({ 
+    Review.findOne(getIncludes(req, { 
         where: req.params || {}
     }))
     .then((response) => {
