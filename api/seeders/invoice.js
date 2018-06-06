@@ -1,11 +1,20 @@
-'use strict';
-
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-      return queryInterface.bulkInsert('Invoices', []);
-  },
-
-  down: (queryInterface, Sequelize) => {
-      return queryInterface.bulkDelete('Invoices', null, {});
-  }
-};
+    up: (queryInterface, Sequelize) => {
+      const invoice = [
+          {
+              order_id: 1,
+              price: 10.00,
+          },
+      ]
+        return queryInterface.bulkInsert('Orders', invoice.map(e => ({
+            ...e,
+            created_at: new Date(),
+            updated_at: new Date(),
+        })));
+    },
+  
+    down: (queryInterface, Sequelize) => {
+        return queryInterface.bulkDelete('Orders', null, {});
+    }
+  };
+  
