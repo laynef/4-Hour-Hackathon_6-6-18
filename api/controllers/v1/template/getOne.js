@@ -8,9 +8,7 @@ module.exports = (req, res) => {
         where: req.params || {}
     }))
     .then((response) => {
-        res.status(200).send({
-            archived: true,
-        })
+        res.status(200).send(response)
     })
     .catch((error) => {
         res.status(400).send({

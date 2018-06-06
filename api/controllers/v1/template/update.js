@@ -5,6 +5,7 @@ module.exports = (req, res) => {
 
     MODEL.update(req.body, {
         where: req.params || {},
+        returning: true
     })
     .then((response) => {
         res.status(203).send({
