@@ -1,4 +1,9 @@
+const { each } = require('lodash')
+
+const { Router } = require('express')
 const fs = require('fs')
+
+const router = Router;
 
 const index = fs.readdirSync(__dirname)
     .map(e => e.replace(RegExp('.js', 'ig')))
@@ -7,4 +12,11 @@ const index = fs.readdirSync(__dirname)
         return acc;
     }, {});
 
+each(index, (routesArray, routeType) => {
+    routesArray.forEach((route) => {
+        router[routeType](route.route, ...route.middleware, route.controller)
+    })
+})
+
+module.exports = router
 
