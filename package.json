@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/laynef/4-Hour-Hackathon_6-6-18/issues"
   },
-  "homepage": "https://github.com/laynef/4-Hour-Hackathon_6-6-18#readme"
+  "homepage": "https://github.com/laynef/4-Hour-Hackathon_6-6-18#readme",
+  "devDependencies": {
+    "sequelize": "^4.37.10",
+    "sequelize-cli": "^4.0.0",
+    "webpack": "^4.11.1"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
+  }
 }
