@@ -1,3 +1,5 @@
+const C = require('../../controllers/v1');
+
 module.exports = [
-    // { route: '', controller: () => {}, middleware: {} },
+    { route: '/users/:id', controller: C.user.getOne },
 ];

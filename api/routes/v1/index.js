@@ -3,7 +3,7 @@ const { each } = require('lodash')
 const { Router } = require('express')
 const fs = require('fs')
 
-const router = Router;
+const router = Router();
 
 const index = fs.readdirSync(__dirname)
     .map(e => e.replace(RegExp('.js', 'ig'), ''))
@@ -15,7 +15,8 @@ const index = fs.readdirSync(__dirname)
 each(index, (routesArray, routeType) => {
     if (routesArray.length > 0) {
         routesArray.forEach((route) => {
-            router[routeType](route.route, ...route.middleware, route.controller)
+            const middleware = route.middleware ? Object.values(route.middleware) : []
+            router[routeType](route.route, ...middleware, route.controller)
         })
     }
 })

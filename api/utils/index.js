@@ -5,7 +5,7 @@ const pathname = path.join(__dirname, 'methods')
 
 const index = fs.readdirSync(pathname)
 .reduce((acc, item) => {
-    acc = { ...acc, ...require(path.join(pathname)) }
+    acc = { ...acc, ...require(path.join(pathname, item)) }
     return acc;
 }, {})
 
