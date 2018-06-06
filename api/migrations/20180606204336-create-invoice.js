@@ -15,6 +15,16 @@ module.exports = {
           key: 'id',
         }
       },
+      user_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Users',
+          key: 'id',
+        }
+      },
+      price: {
+        type: Sequelize.DOUBLE,
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE

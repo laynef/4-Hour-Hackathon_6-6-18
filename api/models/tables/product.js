@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     price: DataTypes.DOUBLE,
     image: DataTypes.STRING,
-    order_id: DataTypes.STRING,
+    order_id: DataTypes.INTEGER,
   }, {
     underscored: true,
     classMethods: {

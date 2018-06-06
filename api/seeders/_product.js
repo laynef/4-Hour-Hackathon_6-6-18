@@ -13,6 +13,12 @@ module.exports = {
             image: '',
             order_id: 1,
           },
+          {
+            name: '',
+            price: 20.00,
+            image: '',
+            order_id: 2,
+          },
       ]
         return queryInterface.bulkInsert('Products', product.map(e => ({
             ...e,

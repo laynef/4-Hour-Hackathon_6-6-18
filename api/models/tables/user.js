@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
         // associations can be defined here
         User.hasMany(models.Invoice, { foreignKey: 'user_id' })
         User.hasMany(models.Order, { foreignKey: 'user_id' })
+        User.hasMany(models.Review, { foreignKey: 'user_id' })
+        User.hasMany(models.Tracking, { foreignKey: 'user_id' })
       }
     }
   });

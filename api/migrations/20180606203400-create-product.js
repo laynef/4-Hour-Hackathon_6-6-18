@@ -11,6 +11,12 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      order_id: {
+        type: Sequelize.INTEGER,
+      },
+      image: {
+        type: Sequelize.STRING
+      },
       price: {
         type: Sequelize.DOUBLE
       },

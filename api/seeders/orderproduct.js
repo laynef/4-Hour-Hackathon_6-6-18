@@ -9,8 +9,12 @@ module.exports = {
                 product_id: 2,
                 order_id: 1,
             },
+            {
+                product_id: 2,
+                order_id: 2,
+            },
         ]
-        return queryInterface.bulkInsert('OrderProducts', invoice.map(e => ({
+        return queryInterface.bulkInsert('OrderProducts', product.map(e => ({
             ...e,
             created_at: new Date(),
             updated_at: new Date(),

@@ -2,6 +2,7 @@ module.exports = {
     up: (queryInterface, Sequelize) => {
       const invoice = [
           {
+              user_id: 1,
               order_id: 1,
               price: 10.00,
           },

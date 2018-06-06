@@ -3,9 +3,11 @@ module.exports = {
       const reviews = [
           {
               order_id: 1,
+              user_id: 1,
           },
           {
             order_id: 2,
+            user_id: 2,
         },
       ]
       return queryInterface.bulkInsert('Reviews', reviews.map(e => ({
