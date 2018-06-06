@@ -1,0 +1,20 @@
+{
+  "name": "@lfaler/fourHourHackathonJuneSixth",
+  "version": "1.0.0",
+  "description": "## Initial Conception     - Shopping site like Amazon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laynef/4-Hour-Hackathon_6-6-18.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laynef/4-Hour-Hackathon_6-6-18/issues"
+  },
+  "homepage": "https://github.com/laynef/4-Hour-Hackathon_6-6-18#readme"
+}
