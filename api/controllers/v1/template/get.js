@@ -1,11 +1,12 @@
 const { MODEL } = require('../../../models');
+const { getIncludes } = require('../../../utils');
 
 
-module.exports = () => {
+module.exports = (req, res) => {
 
-    MODEL.findAllAndCount({ 
-        where: req.params
-    })
+    MODEL.findAllAndCount(getIncludes({ 
+        where: req.params || {}
+    }))
     .then((response) => {
         res.status(200).send({
             archived: true,

@@ -1,23 +1,18 @@
-const { capitalize } = require('lodash');
-const { plural } = require('pluralize')
 const { MODEL } = require('../../../models');
+const { getIncludes } = require('../../../utils');
 
 
-module.exports = () => {
+module.exports = (req, res) => {
 
-    MODEL.create(req.body, { 
-        include: req.query.include.split(',').map(e => ({
-            model: capitalize(plural(e))
-        }))
-    })
-    .then((response) => {
-        res.status(201).send(response)
-    })
-    .catch((error) => {
-        res.status(400).send({
-            dbError: error,
+    MODEL.create(req.body, getIncludes(req, {}))
+        .then((response) => {
+            res.status(201).send(response)
         })
-    })
+        .catch((error) => {
+            res.status(400).send({
+                dbError: error,
+            })
+        })
 
 }
 

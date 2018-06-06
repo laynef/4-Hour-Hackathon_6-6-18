@@ -1,12 +1,12 @@
 const { MODEL } = require('../../../models');
 
 
-module.exports = () => {
+module.exports = (req, res) => {
 
-    MODEL.update({
-        where: req.params,
-    }, { 
+    MODEL.update({ 
         active: false 
+    }, {
+        where: req.params || {},
     })
     .then((response) => {
         res.status(203).send({

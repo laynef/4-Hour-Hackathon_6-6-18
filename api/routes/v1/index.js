@@ -1,8 +1,10 @@
 const fs = require('fs')
 
-const index = fs.readdirSync(__dirname).reduce((acc, item) => {
-    acc[item] = require(`${__dirname}/${item}`);
-    return acc;
-}, {});
+const index = fs.readdirSync(__dirname)
+    .map(e => e.replace(RegExp('.js', 'ig')))
+    .reduce((acc, item) => {
+        acc[item] = require(`${__dirname}/${item}`);
+        return acc;
+    }, {});
 
 
