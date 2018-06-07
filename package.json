@@ -1,11 +1,12 @@
 {
-  "name": "@lfaler/fourHourHackathonJuneSixth",
+  "name": "fourHourHackathonJuneSixth",
   "version": "1.0.0",
   "description": "## Initial Conception     - Shopping site like Amazon",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-api": "node ./api/index.js"
+    "start-api": "node ./api.js",
+    "fresh-db": "./node_modules/sequelize-cli/lib/sequelize db:migrate:undo:all && ./node_modules/sequelize-cli/lib/sequelize db:migrate && ./node_modules/sequelize-cli/lib/sequelize db:seed:all"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,8 @@
   },
   "homepage": "https://github.com/laynef/4-Hour-Hackathon_6-6-18#readme",
   "devDependencies": {
-    "sequelize-cli": "^3.2.0"
+    "sequelize": "^4.37.10",
+    "sequelize-cli": "^4.0.0"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -30,7 +32,6 @@
     "lodash": "^4.17.10",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
-    "pluralize": "^7.0.0",
-    "sequelize": "^3.33.0"
+    "pluralize": "^7.0.0"
   }
 }
