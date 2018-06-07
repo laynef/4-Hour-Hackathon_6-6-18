@@ -65,3 +65,4 @@ Dependiences
 `npm i`
 `npm run fresh-db`
 `npm run start-api`
+`Listening on: http://localhost:8080`
