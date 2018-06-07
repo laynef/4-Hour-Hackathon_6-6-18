@@ -66,3 +66,16 @@ Dependiences
 `npm run fresh-db`
 `npm run start-api`
 `Listening on: http://localhost:8080`
+
+```
+
+Tests API endpoints:
+
+http://localhost:8080/api/v1/user/1
+http://localhost:8080/api/v1/order/1
+http://localhost:8080/api/v1/tracking/1
+http://localhost:8080/api/v1/product/1
+http://localhost:8080/api/v1/invoice/1
+http://localhost:8080/api/v1/review/1
+
+```
