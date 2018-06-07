@@ -51,3 +51,17 @@
     -- Create utils function for 'where' keyword to render fixtures for if the documentation boolean is true
     -- Call all routes declared with fixtures that work and render the JSON from the controller, the middleware (Using the key in the middleware object as a description and the value as the middleware function), and showing the route path
     - Start on my web client to render data
+
+
+# Installation
+
+Have Homebrew Installed: 
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+Dependiences
+`brew install postgresql`
+`brew install node`
+`createdb -p 5430 database_development`
+`npm i`
+`npm run fresh-db`
+`npm run start-api`
